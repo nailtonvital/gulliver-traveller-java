@@ -27,7 +27,7 @@ public class UsuarioDAO implements DAO<Usuario> {
         try{
 // declaro a STRING SQL correspondente ao comando
 // substituindo os valores pelo caractere “?”
-            String SQL = "insert into TB_TIN_USUARIO (nome, tipo_usuario, email, senha, cpf, cidade, telefone, instagram_usuario, data_cadastro) values (?,?,?,?,?,?,?,?,?) ";
+            String SQL = "insert into usuario (nome, tipo_usuario, email, senha, cpf, cidade, telefone, instagram_usuario, data_cadastro) values (?,?,?,?,?,?,?,?,?) ";
 // gero um Statement a partir da String
             PreparedStatement stm = dataSource.getConnection().prepareStatement(SQL);
 // preencho os parâmetros com valores do objeto
@@ -98,7 +98,7 @@ public class UsuarioDAO implements DAO<Usuario> {
         try {
             // declaro a STRING SQL correspondente ao comando
             // substituindo os valores pelo caractere “?”
-            String SQL = "update TB_TIN_USUARIO set  nome= ?, tipo_usuario= ?, email= ?, senha= ?, cpf= ?, cidade= ?, telefone= ?, instagram_usuario= ?  where id = ?";
+            String SQL = "update usuario set  nome= ?, tipo_usuario= ?, email= ?, senha= ?, cpf= ?, cidade= ?, telefone= ?, instagram_usuario= ?  where id = ?";
             // gero o Statement a partir da conexao
             PreparedStatement stm = dataSource.getConnection().prepareStatement(SQL);
 
@@ -129,7 +129,7 @@ public class UsuarioDAO implements DAO<Usuario> {
     public void delete(Usuario object) {
         try {
             // definimos nossa instrucão SQL
-            String SQL = "delete from id_usuario where ID = ?";
+            String SQL = "delete from usuario where id_usuario = ?";
             PreparedStatement stm = dataSource.getConnection().prepareStatement(SQL);
 
             stm.setInt(1, object.getId_usuario());

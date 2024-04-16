@@ -17,16 +17,15 @@
 <div class="container my-5">
 
     <% if (request.getAttribute("usuarios") != null) { %>
-    <button type="button" class="btn btn-primary">Adicionar</button>
+    <a href="/gulliverTraveller_war_exploded/addUser.jsp" class="btn btn-primary">Adicionar</a>
+
     <table class="table">
         <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
-            <th scope="col">Cidade</th>
             <th scope="col">Telefone</th>
-            <th scope="col">Instagram</th>
         </tr>
         </thead>
         <tbody>
@@ -36,12 +35,10 @@
             <td><%= user.getId_usuario() %></td>
             <td><% if (user.getNome() != null) { out.print(user.getNome()); } else { out.print("Nome não disponível"); } %></td>
             <td><% if (user.getEmail() != null) { out.print(user.getEmail()); } else { out.print("Email não disponível"); } %></td>
-            <td><% if (user.getCidadeId() != null) { out.print(user.getCidadeId()); } else { out.print("Cidade não disponível"); } %></td>
             <td><% if (user.getTelefone() != null) { out.print(user.getTelefone()); } else { out.print("Telefone não disponível"); } %></td>
-            <td><% if (user.getInstagram_usuario() != null) { out.print(user.getInstagram_usuario()); } else { out.print("Instagram não disponível"); } %></td>
             <td class="btn-group" role="group">
-                <button type="button" class="btn btn-warning">Edit</button>
-                <button type="button" class="btn btn-danger">Remove</button>
+                <a href="/gulliverTraveller_war_exploded/editUser?idUsuario=<%= user.getId_usuario() %>" class="btn btn-warning">Editar</a>
+                <a href="/gulliverTraveller_war_exploded/removeUser?idUsuario=<%= user.getId_usuario() %>" class="btn btn-danger">Deletar</a>
             </td>
         </tr>
         <% } %>

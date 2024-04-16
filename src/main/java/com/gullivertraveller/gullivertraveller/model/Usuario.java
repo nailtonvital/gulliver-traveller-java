@@ -28,13 +28,13 @@ public class Usuario {
         this.id_usuario = id_usuario;
     }
 
-    public Cidade getCidade() {
-        return cidade;
-    }
-
-    public void setId_cidade(Cidade cidade) {
-        this.cidade = cidade;
-    }
+//    public Cidade getCidade() {
+//        return cidade;
+//    }
+//
+//    public void setId_cidade(Cidade cidade) {
+//        this.cidade = cidade;
+//    }
 
     public String getCidadeId() {
         return cidadeId;
